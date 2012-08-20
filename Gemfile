@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.7'
+gem 'sass-rails',   '~> 3.2.3'
 group :assets do
   gem 'compass_twitter_bootstrap'
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'compass-rails'
   gem 'compass-h5bp'
   gem 'coffee-rails', '~> 3.2.1'
