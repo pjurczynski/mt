@@ -2,7 +2,7 @@
   %menu.main-nav
     - MainMenu.order(:position).each do |menu_item|
       =link_to menu_item.destination do
-        %figure
+        %figure<>
           =image_tag menu_item.icon.url(:normal), :alt => menu_item.desc
           %figcaption
             = menu_item.title
