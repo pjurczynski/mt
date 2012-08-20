@@ -1,0 +1,23 @@
+%h1 Listing main_menus
+
+%table
+  %tr
+    %th Title
+    %th Desc
+    %th Position
+    %th
+    %th
+    %th
+
+  - @main_menus.each do |main_menu|
+    %tr
+      %td= main_menu.title
+      %td= main_menu.desc
+      %td= main_menu.position
+      %td= link_to 'Show', main_menu
+      %td= link_to 'Edit', edit_main_menu_path(main_menu)
+      %td= link_to 'Destroy', main_menu, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Main menu', new_main_menu_path

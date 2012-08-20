@@ -11,6 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120820181130) do
+
+  create_table "main_menus", :force => true do |t|
+    t.string   "title"
+    t.string   "desc"
+    t.integer  "position"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.string   "destination",       :default => "/"
+  end
 
 end

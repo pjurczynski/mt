@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @main_menu.title
+%p
+  %b Desc:
+  = @main_menu.desc
+%p
+  %b Position:
+  = @main_menu.position
+
+= link_to 'Edit', edit_main_menu_path(@main_menu)
+\|
+= link_to 'Back', main_menus_path

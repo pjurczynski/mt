@@ -1,0 +1,11 @@
+= simple_form_for(@main_menu, :html => { :multipart => true }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :desc
+    = f.input :position
+    = f.file_field :icon
+
+  .form-actions
+    = f.button :submit

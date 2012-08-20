@@ -1,37 +1,38 @@
 = content_for :header do
-  %menu.main_nav
-    =link_to '/', :class => 'nav_sztuka' do
-      %figure
-        =image_tag 'placeholder300.jpg', :alt => 'Sztuka'
-        %figcaption
-          Sztuka
-    =link_to 'Gry Arty', '/'
-    =link_to 'Reklama', '/'
-    =link_to 'Rysunek', '/'
-    =link_to 'Malarstwo', '/'
-    =link_to 'Fotografia', '/'
-    =link_to 'Film', '/'
+  %menu.main-nav
+    - MainMenu.order(:position).each do |menu_item|
+      =link_to menu_item.destination do
+        %figure
+          =image_tag menu_item.icon.url(:normal), :alt => menu_item.desc
+          %figcaption
+            = menu_item.title
+      =#link_to 'Gry Arty', '/'
+      =#link_to 'Reklama', '/'
+      =#link_to 'Rysunek', '/'
+      =#link_to 'Malarstwo', '/'
+      =#link_to 'Fotografia', '/'
+      =#link_to 'Film', '/'
 
-%article.bio
-  %h1 Marcin Turecki
+  %article.bio
+    %h1 Marcin Turecki
 
-%article.cv
-  %section.education
-    %header
-      %h3 Edukacja
-    %ul
-      %li.cv_item
-        %article
-          %header
-            %h4.title tytuł
-            %time.cv_period wrzesień 2009
-          %p bla bla
+  %article.cv
+    %section.education
+      %header
+        %h3 Edukacja
+      %ul
+        %li.cv-item
+          %article
+            %header
+              %h4.title tytuł
+              %time.cv-period wrzesień 2009
+            %p bla bla
 
 
-  %section.experience
-    %h3 Doświadczenie
-  %section.skills
-    %h3 Umiejętności
-  %section.interests
-    %h3 Zainteresowania
+    %section.experience
+      %h3 Doświadczenie
+    %section.skills
+      %h3 Umiejętności
+    %section.interests
+      %h3 Zainteresowania
 
