@@ -3,9 +3,13 @@ html
 body
   background-color: $background-color
 
-.main-nav
+p
+  margin-top: 0
 
-  a
+.main-nav
+  text-align: center
+
+  .main-nav-link
     display: inline-block
     text-decoration: none
 
@@ -13,4 +17,50 @@ body
       color: $menu-active-font-color
       text-decoration: underline
   
+.header
+  +column($base-width)
+.main
+  +my-container($internal-width)
+  min-width: $internal-width+px
+  margin: 0 auto
   
+
+.bio
+  +column( 304, $internal-width )
+  padding-right: column-width( 45, $internal-width )
+
+$cv-width: 237+517
+.cv
+  +column( $cv-width, $internal-width )
+
+.topic
+  +column( 517, $cv-width )
+  +push-column( column-width( 237, $cv-width ) )
+.cv-list
+  +my-container( $cv-width, $cv-width )
+  padding: 0
+  margin: 0
+
+.cv-item
+  +my-container( $cv-width, $cv-width )
+  margin: 0
+  padding: 0
+  +clearfix
+
+.cv-item-header
+  +column( $cv-width, $cv-width )
+
+.cv-item-period
+  +column( 237-(54*2), $cv-width )
+  padding: 0 column-width( 54, $cv-width )
+  margin-top: 1.33em
+
+.cv-item-title
+  +column( 517+10, $cv-width )
+  float: right
+  margin-bottom: 0
+
+.cv-item-body
+  +column( 517, $cv-width )
+  +push-column( column-width(237, $cv-width))
+.footer

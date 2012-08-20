@@ -1,11 +1,13 @@
 = content_for :header do
   %menu.main-nav
     - MainMenu.order(:position).each do |menu_item|
-      =link_to menu_item.destination do
-        %figure<>
-          =image_tag menu_item.icon.url(:normal), :alt => menu_item.desc
-          %figcaption
-            = menu_item.title
+      -# remove whitespace
+      %span<>
+        =link_to menu_item.destination, class: 'main-nav-link' do
+          %figure
+            =image_tag menu_item.icon.url(:normal), :alt => menu_item.desc
+            %figcaption
+              = menu_item.title
       =#link_to 'Gry Arty', '/'
       =#link_to 'Reklama', '/'
       =#link_to 'Rysunek', '/'
@@ -13,26 +15,29 @@
       =#link_to 'Fotografia', '/'
       =#link_to 'Film', '/'
 
-  %article.bio
-    %h1 Marcin Turecki
+%article.bio
+  %h1 Marcin Turecki
 
-  %article.cv
-    %section.education
-      %header
-        %h3 Edukacja
-      %ul
-        %li.cv-item
-          %article
-            %header
-              %h4.title tytuł
-              %time.cv-period wrzesień 2009
+%article.cv
+  %h1 Curriculum Vitae
+  %section.education
+    %header.topic
+      %h3 Edukacja
+
+    %ul.cv-list
+      %li.cv-item
+        %article
+          %header.cv-item-header
+            %h4.cv-item-title tytuł
+            %time.cv-item-period wrzesień 2009
+          .cv-item-body
             %p bla bla
 
 
-    %section.experience
-      %h3 Doświadczenie
-    %section.skills
-      %h3 Umiejętności
-    %section.interests
-      %h3 Zainteresowania
+  %section.experience
+    %h3 Doświadczenie
+  %section.skills
+    %h3 Umiejętności
+  %section.interests
+    %h3 Zainteresowania
 
