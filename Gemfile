@@ -15,6 +15,7 @@ gem "haml", ">= 3.1.7"
 gem "haml-rails", ">= 0.3.4", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 2.3.1", :group => :development
+gem "pry", :group => :development
 gem "html5-rails"
 gem "simple_form"
 gem "therubyracer", :group => :assets, :platform => :ruby
