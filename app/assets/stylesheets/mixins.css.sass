@@ -8,11 +8,9 @@
 @mixin pull-column( $percentage )
   margin-left: -$percentage
 
-@mixin my-container( $column-width, $parent-width: $base-width )
+@mixin container( $column-width, $parent-width: $base-width )
   width: column-width( $column-width, $parent-width )
 
 
 @function column-width( $column-width, $parent-width: $base-width )
   @return floor($column-width/$parent-width * 100%)
-
-@mixin container
