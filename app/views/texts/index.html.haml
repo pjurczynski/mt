@@ -1,0 +1,23 @@
+%h1 Listing texts
+
+%table
+  %tr
+    %th Slug
+    %th Name
+    %th Content
+    %th
+    %th
+    %th
+
+  - @texts.each do |text|
+    %tr
+      %td= text.slug
+      %td= text.name
+      %td= text.content
+      %td= link_to 'Show', text
+      %td= link_to 'Edit', edit_text_path(text)
+      %td= link_to 'Destroy', text, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Text', new_text_path

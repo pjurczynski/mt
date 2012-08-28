@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820181130) do
+ActiveRecord::Schema.define(:version => 20120828175501) do
 
   create_table "main_menus", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20120820181130) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.string   "destination",       :default => "/"
+  end
+
+  create_table "texts", :force => true do |t|
+    t.string   "slug"
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

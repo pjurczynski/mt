@@ -20,4 +20,5 @@ gem "html5-rails"
 gem "simple_form"
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
-gem 'rpeg-markdown'
+gem 'rest_in_place'
+gem 'bluecloth'

@@ -2,12 +2,26 @@ html
 
 body
   background-color: $background-color
+  font-size: 0.875em
   // NOTE: delete after testing
 
 p
 
+a
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    color: $link-color
+
+h1
+  font-size: 2.375em
+  font-weight: normal
+  margin: 0 0 1.1em 0
+
+
 .main-nav
   text-align: center
+  border-bottom: 1px solid $menu-border-color
 
   .main-nav-link
     display: inline-block
@@ -18,6 +32,10 @@ p
     &:hover
       color: $menu-active-font-color
       text-decoration: underline
+
+    figcaption
+      padding: 10px 0
+      
   
 .header
   +container($base-width)
@@ -25,6 +43,7 @@ p
 .main
   +container($internal-width)
   margin: 0 auto
+  min-width: 875px
 
 .bio
   +column(304, $internal-width)
@@ -34,6 +53,10 @@ p
   +column(658, $internal-width)
 
 .topic
+  color: $font-topic-color
+  h3, h4
+    font-weight: normal
+    margin-bottom: 1.35em
 
 .cv-list
   padding: 0
@@ -46,10 +69,22 @@ p
   +clearfix
 
 .cv-item-header
+  h4
+    color: $accent-font-color
+    font-weight: normal
+    margin-bottom: 0
 
-.cv-item-period
+.cv-item-meta
   +column(138,658)
+  text-align: right
+  min-width: 138px
   //margin-top: 1.33em
+
+.cv-skill-level
+  @extend .cv-item-meta
+
+.cv-skill-name
+  @extend .cv-item-body
 
 .cv-item-title
   +column(471,658)
@@ -59,6 +94,9 @@ p
 .cv-item-body
   +column(471,658)
   float: right
+
+  p:first-child
+    margin-top: 0
 
 .footer
   display: none
