@@ -22,3 +22,7 @@ gem "therubyracer", :group => :assets, :platform => :ruby
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'rest_in_place'
 gem 'bluecloth'
+gem 'rails_admin'
+
+
+gem "devise"

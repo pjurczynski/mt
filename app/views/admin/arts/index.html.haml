@@ -1,0 +1,23 @@
+%h1
+  Listing arts -
+  = link_to 'dodaj nowy', new_admin_art_path
+
+%table
+  %tr
+    %th Name
+    %th Url
+    %th Description
+    %th Order
+    %th
+    %th
+    %th
+
+  - @arts.each do |art|
+    %tr
+      %td= art.name
+      %td= art.url
+      %td= art.description
+      %td= art.order
+      %td= link_to 'Show', art
+      %td= link_to 'Edit', edit_art_path(art)
+      %td= link_to 'Destroy', art, :confirm => 'Are you sure?', :method => :delete

@@ -1,0 +1,4 @@
+production:
+ access_key_id: [Your Key]
+ secret_access_key: [Your Secret]
+ bucket: [Your bucket name]
